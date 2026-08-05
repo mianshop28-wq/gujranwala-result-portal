@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Online Result Portal</title>
+
+<style>
+
+*{
+box-sizing:border-box;
+}
+
+body{
+margin:0;
+font-family:Arial,sans-serif;
+background:#eef2f3;
+}
+
+.header{
+background:#006b3c;
+color:white;
+padding:25px;
+text-align:center;
+}
+
+.header h1{
+margin:0;
+font-size:32px;
+}
+
+.header p{
+margin:8px;
+}
+
+.nav{
+background:#004d2b;
+color:white;
+padding:12px;
+text-align:center;
+}
+
+.container{
+display:flex;
+gap:20px;
+width:90%;
+margin:30px auto;
+}
+
+.side{
+width:25%;
+background:white;
+padding:20px;
+border-radius:8px;
+box-shadow:0 0 8px #aaa;
+}
+
+.side h3{
+color:#006b3c;
+}
+
+.side li{
+margin:12px 0;
+}
+
+
+.formbox{
+width:50%;
+background:white;
+padding:30px;
+border-radius:10px;
+box-shadow:0 0 12px #aaa;
+}
+
+
+label{
+font-weight:bold;
+display:block;
+margin-top:15px;
+}
+
+
+select,input{
+width:100%;
+padding:12px;
+margin-top:7px;
+border:1px solid #aaa;
+border-radius:5px;
+font-size:16px;
+}
+
+
+/* CAPTCHA */
+
+.captcha{
+height:70px;
+margin-top:10px;
+background:#eee;
+border:1px solid #aaa;
+position:relative;
+overflow:hidden;
+display:flex;
+align-items:center;
+justify-content:center;
+}
+
+
+.captcha span{
+font-size:35px;
+font-style:italic;
+font-weight:bold;
+letter-spacing:8px;
+transform:rotate(-8deg);
+}
+
+
+.line1,.line2,.line3{
+position:absolute;
+height:5px;
+width:100%;
+}
+
+
+.line1{
+background:red;
+top:20px;
+transform:rotate(7deg);
+}
+
+.line2{
+background:blue;
+top:35px;
+transform:rotate(-8deg);
+}
+
+.line3{
+background:green;
+top:50px;
+transform:rotate(5deg);
+}
+
+
+button{
+margin-top:25px;
+width:100%;
+padding:15px;
+background:#006b3c;
+color:white;
+border:0;
+border-radius:5px;
+font-size:18px;
+cursor:pointer;
+}
+
+
+button:hover{
+background:#004d2b;
+}
+
+
+.footer{
+background:#004d2b;
+color:white;
+padding:20px;
+text-align:center;
+}
+
+
+@media(max-width:800px){
+
+.container{
+flex-direction:column;
+}
+
+.side,.formbox{
+width:100%;
+}
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="header">
+
+<h1>Online Result Portal</h1>
+
+<p>Check Your Examination Result</p>
+
+</div>
+
+
+<div class="nav">
+
+Home | Result | Instructions | Contact
+
+</div>
+
+
+
+<div class="container">
+
+
+<div class="side">
+
+<h3>Important Instructions</h3>
+
+<ul>
+
+<li>Roll Number carefully enter karein.</li>
+
+<li>Captcha code same likhein.</li>
+
+<li>Result announcement ke baad check karein.</li>
+
+<li>Internet connection check karein.</li>
+
+</ul>
+
+</div>
+
+
+
+
+<div class="formbox">
+
+
+<h2 style="text-align:center;color:#006b3c;">
+Search Result
+</h2>
+
+
+
+<label>Select Year</label>
+
+<select>
+
+<script>
+
+for(let y=2026;y>=2000;y--){
+
+document.write("<option>"+y+"</option>");
+
+}
+
+</script>
+
+</select>
+
+
+
+
+<label>Select Class</label>
+
+<select>
+
+<option>9th Annual</option>
+<option>10th Annual</option>
+<option>11th Annual</option>
+<option>12th Annual</option>
+<option>SSC Part-I</option>
+<option>SSC Part-II</option>
+<option>HSSC Part-I</option>
+<option>HSSC Part-II</option>
+
+</select>
+
+
+
+
+<label>Roll Number</label>
+
+<input type="number" placeholder="Enter Roll Number">
+
+
+
+
+<label>Captcha</label>
+
+<div class="captcha">
+
+<span>7Kp92</span>
+
+<div class="line1"></div>
+<div class="line2"></div>
+<div class="line3"></div>
+
+</div>
+
+
+<input type="text" placeholder="Enter Captcha Code">
+
+
+
+
+<button onclick="openResult()">
+CHECK RESULT
+</button>
+
+
+</div>
+
+
+
+
+
+<div class="side">
+
+
+<h3>Result Information</h3>
+
+
+<ul>
+
+<li>SSC Results</li>
+
+<li>HSSC Results</li>
+
+<li>Annual Examinations</li>
+
+<li>Previous Years Results</li>
+
+<li>Board Notifications</li>
+
+</ul>
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+<div class="footer">
+
+Online Result Portal © 2026
+
+</div>
+
+
+
+<script>
+
+function openResult(){
+
+window.open(
+"https://www.bisegrw.edu.pk/",
+"_blank"
+);
+
+}
+
+</script>
+
+
+</body>
+
+</html>
