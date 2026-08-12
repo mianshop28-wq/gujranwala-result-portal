@@ -1,9 +1,8 @@
-```html
 <!DOCTYPE html>
 <html>
 <head>
 
-<meta name="google-site-verification" content="qh7MX_AopwGgTqLDLuoa394_DTT_s6YI0eo2nbcN2PU" />
+<meta name="google-site-verification" content="qh7MX_AopwGgTqLDLuoa394_DTT_s6YI0eo2nbcN2PU">
 
 <link rel="icon" type="image/png" href="favicon.png">
 
@@ -159,6 +158,62 @@ button:hover{
 background:#004d2b;
 }
 
+.ad-button{
+margin-top:20px;
+width:220px;
+padding:12px;
+background:#006b3c;
+color:white;
+border:0;
+border-radius:5px;
+font-size:16px;
+cursor:pointer;
+}
+
+.ad-button:hover{
+background:#004d2b;
+}
+
+.ad-overlay{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.35);
+display:none;
+align-items:center;
+justify-content:center;
+z-index:99999;
+}
+
+.ad-box{
+width:300px;
+height:250px;
+background:white;
+position:relative;
+}
+
+.close-ad{
+position:absolute;
+right:0;
+top:-35px;
+width:30px;
+height:30px;
+padding:0;
+margin:0;
+background:#000;
+color:white;
+border:0;
+border-radius:50%;
+font-size:18px;
+z-index:100000;
+}
+
+.close-ad:hover{
+background:#333;
+}
+
 .footer{
 background:#004d2b;
 color:white;
@@ -186,9 +241,7 @@ width:100%;
 
 </head>
 
-
 <body>
-
 
 <div class="header">
 
@@ -305,67 +358,18 @@ CHECK RESULT
 </button>
 
 
-```html
-<!-- Automatic Center Banner Ad -->
-<div id="adOverlay" style="
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,0.35);
-display:flex;
-align-items:center;
-justify-content:center;
-z-index:99999;
-">
+<!-- Continue To Ad Button -->
 
-<div style="
-width:300px;
-height:250px;
-background:white;
-position:relative;
-">
+<div style="text-align:center;">
 
-<button onclick="document.getElementById('adOverlay').style.display='none'"
-style="
-position:absolute;
-right:0;
-top:-35px;
-width:30px;
-height:30px;
-padding:0;
-margin:0;
-background:#000;
-color:white;
-border:0;
-border-radius:50%;
-font-size:18px;
-z-index:100000;
-">
-continue to ad
+<button class="ad-button" onclick="showAd()">
+CONTINUE TO AD
 </button>
 
-<script>
-  atOptions = {
-    'key' : 'ca8eb297d6b609f28729cfe3c15e184e',
-    'format' : 'iframe',
-    'height' : 250,
-    'width' : 300,
-    'params' : {}
-  };
-</script>
-
-<script src="https://www.highperformanceformat.com/ca8eb297d6b609f28729cfe3c15e184e/invoke.js"></script>
-
 </div>
-</div>
-```
-
 
 
 </div>
-
 
 
 <div class="side">
@@ -392,6 +396,36 @@ continue to ad
 </div>
 
 
+<!-- Ad Overlay -->
+
+<div id="adOverlay" class="ad-overlay">
+
+<div class="ad-box">
+
+<button class="close-ad" onclick="closeAd()">
+×
+</button>
+
+
+<script>
+atOptions = {
+  'key' : 'ca8eb297d6b609f28729cfe3c15e184e',
+  'format' : 'iframe',
+  'height' : 250,
+  'width' : 300,
+  'params' : {}
+};
+</script>
+
+
+<script src="https://www.highperformanceformat.com/ca8eb297d6b609f28729cfe3c15e184e/invoke.js"></script>
+
+
+</div>
+
+</div>
+
+
 <div class="footer">
 
 Gujranwala Result Portal © 2026 |
@@ -403,8 +437,21 @@ Gujranwala Result Portal © 2026 |
 </div>
 
 
-
 <script>
+
+function showAd(){
+
+document.getElementById("adOverlay").style.display="flex";
+
+}
+
+
+function closeAd(){
+
+document.getElementById("adOverlay").style.display="none";
+
+}
+
 
 function openResult(){
 
@@ -417,9 +464,10 @@ window.open(
 
 </script>
 
+
 <script src="https://pl30754906.effectivecpmnetwork.com/87/b9/ad/87b9ad2bc31bfd1dfb08ce6b5e2e81a3.js"></script>
+
 
 </body>
 
 </html>
-```
