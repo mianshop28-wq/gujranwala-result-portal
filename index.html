@@ -189,18 +189,12 @@ justify-content:center;
 z-index:99999;
 }
 
-
-/* Ad box */
-
 #adBox{
 width:300px;
 height:250px;
 background:white;
 position:relative;
 }
-
-
-/* Top buttons */
 
 #adControls{
 position:absolute;
@@ -212,14 +206,12 @@ gap:5px;
 align-items:center;
 }
 
-
-/* Continue to Ad button */
-
 #continueAd{
 width:auto;
 height:30px;
 
 padding:0 10px;
+
 margin:0;
 
 background:#000;
@@ -229,17 +221,16 @@ border:0;
 border-radius:3px;
 
 font-size:12px;
+
 cursor:pointer;
 }
-
-
-/* Close button */
 
 #closeAd{
 width:30px;
 height:30px;
 
 padding:0;
+
 margin:0;
 
 background:#000;
@@ -249,11 +240,21 @@ border:0;
 border-radius:50%;
 
 font-size:18px;
+
 cursor:pointer;
 }
 
+#adLoading{
+width:300px;
+height:250px;
 
-/* Mobile */
+display:flex;
+align-items:center;
+justify-content:center;
+
+font-size:15px;
+color:#555;
+}
 
 @media(max-width:800px){
 
@@ -275,8 +276,6 @@ width:100%;
 <body>
 
 
-<!-- HEADER -->
-
 <div class="header">
 
 <h1>Gujranwala Result Portal</h1>
@@ -286,43 +285,43 @@ width:100%;
 </div>
 
 
-<!-- NAVIGATION -->
-
 <div class="nav">
 
-<a href="index.html" style="color:white;text-decoration:none;margin:10px;">
+<a href="index.html"
+style="color:white;text-decoration:none;margin:10px;">
 Home
 </a>
 
-<a href="result.html" style="color:white;text-decoration:none;margin:10px;">
+<a href="result.html"
+style="color:white;text-decoration:none;margin:10px;">
 Result
 </a>
 
-<a href="instructions.html" style="color:white;text-decoration:none;margin:10px;">
+<a href="instructions.html"
+style="color:white;text-decoration:none;margin:10px;">
 Instructions
 </a>
 
-<a href="about.html" style="color:white;text-decoration:none;margin:10px;">
+<a href="about.html"
+style="color:white;text-decoration:none;margin:10px;">
 About
 </a>
 
-<a href="contact.html" style="color:white;text-decoration:none;margin:10px;">
+<a href="contact.html"
+style="color:white;text-decoration:none;margin:10px;">
 Contact
 </a>
 
-<a href="privacy.html" style="color:white;text-decoration:none;margin:10px;">
+<a href="privacy.html"
+style="color:white;text-decoration:none;margin:10px;">
 Privacy
 </a>
 
 </div>
 
 
-<!-- MAIN CONTAINER -->
-
 <div class="container">
 
-
-<!-- LEFT SIDE -->
 
 <div class="side">
 
@@ -342,8 +341,6 @@ Privacy
 
 </div>
 
-
-<!-- RESULT FORM -->
 
 <div class="formbox">
 
@@ -402,15 +399,12 @@ placeholder="Enter Roll Number"
 
 <label>Captcha</label>
 
-
 <div class="captcha">
 
 <span>7Kp92</span>
 
 <div class="line1"></div>
-
 <div class="line2"></div>
-
 <div class="line3"></div>
 
 </div>
@@ -425,16 +419,11 @@ title="Only letters and numbers allowed"
 
 
 <button onclick="openResult()">
-
 CHECK RESULT
-
 </button>
-
 
 </div>
 
-
-<!-- RIGHT SIDE -->
 
 <div class="side">
 
@@ -456,12 +445,11 @@ CHECK RESULT
 
 </div>
 
-
 </div>
 
 
 <!-- =========================
-     CENTER AD
+     AD OVERLAY
 ========================= -->
 
 <div id="adOverlay">
@@ -469,14 +457,11 @@ CHECK RESULT
 <div id="adBox">
 
 
-<!-- TOP BUTTONS -->
-
 <div id="adControls">
-
 
 <button
 id="continueAd"
-onclick="continueAd()"
+onclick="loadAd()"
 >
 Continue to Ad
 </button>
@@ -489,41 +474,24 @@ onclick="closeAd()"
 ×
 </button>
 
-
 </div>
 
 
-<!-- ADSTERra AD -->
+<div id="adContent">
 
-<script>
+<div id="adLoading">
 
-atOptions = {
-
-'key' : 'ca8eb297d6b609f28729cfe3c15e184e',
-
-'format' : 'iframe',
-
-'height' : 250,
-
-'width' : 300,
-
-'params' : {}
-
-};
-
-</script>
-
-
-<script src="https://www.highperformanceformat.com/ca8eb297d6b609f28729cfe3c15e184e/invoke.js">
-</script>
-
+Click "Continue to Ad"
 
 </div>
 
 </div>
 
 
-<!-- FOOTER -->
+</div>
+
+</div>
+
 
 <div class="footer">
 
@@ -542,27 +510,57 @@ Contact Us
 </div>
 
 
-<!-- JAVASCRIPT -->
-
 <script>
 
-function closeAd(){
+function loadAd(){
 
-document.getElementById("adOverlay").style.display="none";
+const adContent =
+document.getElementById("adContent");
+
+adContent.innerHTML = "";
+
+
+/*
+Adsterra configuration
+*/
+
+window.atOptions = {
+
+'key' : 'ca8eb297d6b609f28729cfe3c15e184e',
+
+'format' : 'iframe',
+
+'height' : 250,
+
+'width' : 300,
+
+'params' : {}
+
+};
+
+
+/*
+Load Adsterra script only
+after user's button click.
+*/
+
+const script =
+document.createElement("script");
+
+script.src =
+"https://www.highperformanceformat.com/ca8eb297d6b609f28729cfe3c15e184e/invoke.js";
+
+script.async = true;
+
+adContent.appendChild(script);
 
 }
 
 
-function continueAd(){
+function closeAd(){
 
-/*
-The button only continues/closes
-the ad overlay.
-It does not artificially click
-the advertisement.
-*/
-
-document.getElementById("adOverlay").style.display="none";
+document.getElementById("adOverlay").style.display =
+"none";
 
 }
 
@@ -570,11 +568,8 @@ document.getElementById("adOverlay").style.display="none";
 function openResult(){
 
 window.open(
-
 "https://www.bisegrw.edu.pk/",
-
 "_blank"
-
 );
 
 }
