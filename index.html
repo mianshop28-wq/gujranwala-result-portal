@@ -49,6 +49,12 @@ padding:12px;
 text-align:center;
 }
 
+.nav a{
+color:white;
+text-decoration:none;
+margin:10px;
+}
+
 .container{
 display:flex;
 gap:20px;
@@ -86,7 +92,8 @@ display:block;
 margin-top:15px;
 }
 
-select,input{
+select,
+input{
 width:100%;
 padding:12px;
 margin-top:7px;
@@ -115,7 +122,9 @@ letter-spacing:8px;
 transform:rotate(-8deg);
 }
 
-.line1,.line2,.line3{
+.line1,
+.line2,
+.line3{
 position:absolute;
 height:5px;
 width:100%;
@@ -221,7 +230,6 @@ border:0;
 border-radius:3px;
 
 font-size:12px;
-
 cursor:pointer;
 }
 
@@ -240,11 +248,10 @@ border:0;
 border-radius:50%;
 
 font-size:18px;
-
 cursor:pointer;
 }
 
-#adLoading{
+#adMessage{
 width:300px;
 height:250px;
 
@@ -252,7 +259,9 @@ display:flex;
 align-items:center;
 justify-content:center;
 
-font-size:15px;
+text-align:center;
+
+font-size:14px;
 color:#555;
 }
 
@@ -262,7 +271,8 @@ color:#555;
 flex-direction:column;
 }
 
-.side,.formbox{
+.side,
+.formbox{
 width:100%;
 }
 
@@ -287,35 +297,17 @@ width:100%;
 
 <div class="nav">
 
-<a href="index.html"
-style="color:white;text-decoration:none;margin:10px;">
-Home
-</a>
+<a href="index.html">Home</a>
 
-<a href="result.html"
-style="color:white;text-decoration:none;margin:10px;">
-Result
-</a>
+<a href="result.html">Result</a>
 
-<a href="instructions.html"
-style="color:white;text-decoration:none;margin:10px;">
-Instructions
-</a>
+<a href="instructions.html">Instructions</a>
 
-<a href="about.html"
-style="color:white;text-decoration:none;margin:10px;">
-About
-</a>
+<a href="about.html">About</a>
 
-<a href="contact.html"
-style="color:white;text-decoration:none;margin:10px;">
-Contact
-</a>
+<a href="contact.html">Contact</a>
 
-<a href="privacy.html"
-style="color:white;text-decoration:none;margin:10px;">
-Privacy
-</a>
+<a href="privacy.html">Privacy</a>
 
 </div>
 
@@ -371,19 +363,12 @@ document.write("<option>"+y+"</option>");
 <select>
 
 <option>9th Annual</option>
-
 <option>10th Annual</option>
-
 <option>11th Annual</option>
-
 <option>12th Annual</option>
-
 <option>SSC Part-I</option>
-
 <option>SSC Part-II</option>
-
 <option>HSSC Part-I</option>
-
 <option>HSSC Part-II</option>
 
 </select>
@@ -432,13 +417,9 @@ CHECK RESULT
 <ul>
 
 <li>SSC Results</li>
-
 <li>HSSC Results</li>
-
 <li>Annual Examinations</li>
-
 <li>Previous Years Results</li>
-
 <li>Board Notifications</li>
 
 </ul>
@@ -479,9 +460,9 @@ onclick="closeAd()"
 
 <div id="adContent">
 
-<div id="adLoading">
+<div id="adMessage">
 
-Click "Continue to Ad"
+Press "Continue to Ad" to load advertisement.
 
 </div>
 
@@ -520,9 +501,7 @@ document.getElementById("adContent");
 adContent.innerHTML = "";
 
 
-/*
-Adsterra configuration
-*/
+/* Adsterra configuration */
 
 window.atOptions = {
 
@@ -539,10 +518,7 @@ window.atOptions = {
 };
 
 
-/*
-Load Adsterra script only
-after user's button click.
-*/
+/* Load advertisement after user's click */
 
 const script =
 document.createElement("script");
@@ -559,8 +535,7 @@ adContent.appendChild(script);
 
 function closeAd(){
 
-document.getElementById("adOverlay").style.display =
-"none";
+document.getElementById("adOverlay").style.display="none";
 
 }
 
@@ -576,8 +551,6 @@ window.open(
 
 </script>
 
-
-<!-- OTHER AD CODE -->
 
 <script src="https://pl30754906.effectivecpmnetwork.com/87/b9/ad/87b9ad2bc31bfd1dfb08ce6b5e2e81a3.js">
 </script>
