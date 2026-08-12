@@ -158,62 +158,6 @@ button:hover{
 background:#004d2b;
 }
 
-.ad-button{
-margin-top:20px;
-width:220px;
-padding:12px;
-background:#006b3c;
-color:white;
-border:0;
-border-radius:5px;
-font-size:16px;
-cursor:pointer;
-}
-
-.ad-button:hover{
-background:#004d2b;
-}
-
-.ad-overlay{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,0.35);
-display:none;
-align-items:center;
-justify-content:center;
-z-index:99999;
-}
-
-.ad-box{
-width:300px;
-height:250px;
-background:white;
-position:relative;
-}
-
-.close-ad{
-position:absolute;
-right:0;
-top:-35px;
-width:30px;
-height:30px;
-padding:0;
-margin:0;
-background:#000;
-color:white;
-border:0;
-border-radius:50%;
-font-size:18px;
-z-index:100000;
-}
-
-.close-ad:hover{
-background:#333;
-}
-
 .footer{
 background:#004d2b;
 color:white;
@@ -224,6 +168,92 @@ text-align:center;
 .footer a{
 color:white;
 }
+
+
+/* =========================
+   AD OVERLAY
+========================= */
+
+#adOverlay{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.35);
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+z-index:99999;
+}
+
+
+/* Ad box */
+
+#adBox{
+width:300px;
+height:250px;
+background:white;
+position:relative;
+}
+
+
+/* Top buttons */
+
+#adControls{
+position:absolute;
+right:0;
+top:-38px;
+
+display:flex;
+gap:5px;
+align-items:center;
+}
+
+
+/* Continue to Ad button */
+
+#continueAd{
+width:auto;
+height:30px;
+
+padding:0 10px;
+margin:0;
+
+background:#000;
+color:white;
+
+border:0;
+border-radius:3px;
+
+font-size:12px;
+cursor:pointer;
+}
+
+
+/* Close button */
+
+#closeAd{
+width:30px;
+height:30px;
+
+padding:0;
+margin:0;
+
+background:#000;
+color:white;
+
+border:0;
+border-radius:50%;
+
+font-size:18px;
+cursor:pointer;
+}
+
+
+/* Mobile */
 
 @media(max-width:800px){
 
@@ -241,7 +271,11 @@ width:100%;
 
 </head>
 
+
 <body>
+
+
+<!-- HEADER -->
 
 <div class="header">
 
@@ -252,25 +286,43 @@ width:100%;
 </div>
 
 
+<!-- NAVIGATION -->
+
 <div class="nav">
 
-<a href="index.html" style="color:white;text-decoration:none;margin:10px;">Home</a>
+<a href="index.html" style="color:white;text-decoration:none;margin:10px;">
+Home
+</a>
 
-<a href="result.html" style="color:white;text-decoration:none;margin:10px;">Result</a>
+<a href="result.html" style="color:white;text-decoration:none;margin:10px;">
+Result
+</a>
 
-<a href="instructions.html" style="color:white;text-decoration:none;margin:10px;">Instructions</a>
+<a href="instructions.html" style="color:white;text-decoration:none;margin:10px;">
+Instructions
+</a>
 
-<a href="about.html" style="color:white;text-decoration:none;margin:10px;">About</a>
+<a href="about.html" style="color:white;text-decoration:none;margin:10px;">
+About
+</a>
 
-<a href="contact.html" style="color:white;text-decoration:none;margin:10px;">Contact</a>
+<a href="contact.html" style="color:white;text-decoration:none;margin:10px;">
+Contact
+</a>
 
-<a href="privacy.html" style="color:white;text-decoration:none;margin:10px;">Privacy</a>
+<a href="privacy.html" style="color:white;text-decoration:none;margin:10px;">
+Privacy
+</a>
 
 </div>
 
 
+<!-- MAIN CONTAINER -->
+
 <div class="container">
 
+
+<!-- LEFT SIDE -->
 
 <div class="side">
 
@@ -291,8 +343,9 @@ width:100%;
 </div>
 
 
-<div class="formbox">
+<!-- RESULT FORM -->
 
+<div class="formbox">
 
 <h2 style="text-align:center;color:#006b3c;">
 Search Result
@@ -321,12 +374,19 @@ document.write("<option>"+y+"</option>");
 <select>
 
 <option>9th Annual</option>
+
 <option>10th Annual</option>
+
 <option>11th Annual</option>
+
 <option>12th Annual</option>
+
 <option>SSC Part-I</option>
+
 <option>SSC Part-II</option>
+
 <option>HSSC Part-I</option>
+
 <option>HSSC Part-II</option>
 
 </select>
@@ -334,43 +394,47 @@ document.write("<option>"+y+"</option>");
 
 <label>Roll Number</label>
 
-<input type="number" placeholder="Enter Roll Number">
+<input
+type="number"
+placeholder="Enter Roll Number"
+>
 
 
 <label>Captcha</label>
+
 
 <div class="captcha">
 
 <span>7Kp92</span>
 
 <div class="line1"></div>
+
 <div class="line2"></div>
+
 <div class="line3"></div>
 
 </div>
 
 
-<input type="text" placeholder="Enter Captcha Code" pattern="[A-Za-z0-9]+" title="Only letters and numbers allowed">
+<input
+type="text"
+placeholder="Enter Captcha Code"
+pattern="[A-Za-z0-9]+"
+title="Only letters and numbers allowed"
+>
 
 
 <button onclick="openResult()">
+
 CHECK RESULT
+
 </button>
 
-
-<!-- Continue To Ad Button -->
-
-<div style="text-align:center;">
-
-<button class="ad-button" onclick="showAd()">
-CONTINUE TO AD
-</button>
 
 </div>
 
 
-</div>
-
+<!-- RIGHT SIDE -->
 
 <div class="side">
 
@@ -396,57 +460,107 @@ CONTINUE TO AD
 </div>
 
 
-<!-- Ad Overlay -->
+<!-- =========================
+     CENTER AD
+========================= -->
 
-<div id="adOverlay" class="ad-overlay">
+<div id="adOverlay">
 
-<div class="ad-box">
+<div id="adBox">
 
-<button class="close-ad" onclick="closeAd()">
+
+<!-- TOP BUTTONS -->
+
+<div id="adControls">
+
+
+<button
+id="continueAd"
+onclick="continueAd()"
+>
+Continue to Ad
+</button>
+
+
+<button
+id="closeAd"
+onclick="closeAd()"
+>
 ×
 </button>
 
 
+</div>
+
+
+<!-- ADSTERra AD -->
+
 <script>
+
 atOptions = {
-  'key' : 'ca8eb297d6b609f28729cfe3c15e184e',
-  'format' : 'iframe',
-  'height' : 250,
-  'width' : 300,
-  'params' : {}
+
+'key' : 'ca8eb297d6b609f28729cfe3c15e184e',
+
+'format' : 'iframe',
+
+'height' : 250,
+
+'width' : 300,
+
+'params' : {}
+
 };
+
 </script>
 
 
-<script src="https://www.highperformanceformat.com/ca8eb297d6b609f28729cfe3c15e184e/invoke.js"></script>
+<script src="https://www.highperformanceformat.com/ca8eb297d6b609f28729cfe3c15e184e/invoke.js">
+</script>
 
 
 </div>
 
 </div>
 
+
+<!-- FOOTER -->
 
 <div class="footer">
 
 Gujranwala Result Portal © 2026 |
 
-<a href="privacy.html">Privacy Policy</a> |
+<a href="privacy.html">
+Privacy Policy
+</a>
 
-<a href="contact.html">Contact Us</a>
+|
+
+<a href="contact.html">
+Contact Us
+</a>
 
 </div>
 
 
+<!-- JAVASCRIPT -->
+
 <script>
 
-function showAd(){
+function closeAd(){
 
-document.getElementById("adOverlay").style.display="flex";
+document.getElementById("adOverlay").style.display="none";
 
 }
 
 
-function closeAd(){
+function continueAd(){
+
+/*
+The button only continues/closes
+the ad overlay.
+It does not artificially click
+the advertisement.
+*/
 
 document.getElementById("adOverlay").style.display="none";
 
@@ -456,8 +570,11 @@ document.getElementById("adOverlay").style.display="none";
 function openResult(){
 
 window.open(
+
 "https://www.bisegrw.edu.pk/",
+
 "_blank"
+
 );
 
 }
@@ -465,7 +582,10 @@ window.open(
 </script>
 
 
-<script src="https://pl30754906.effectivecpmnetwork.com/87/b9/ad/87b9ad2bc31bfd1dfb08ce6b5e2e81a3.js"></script>
+<!-- OTHER AD CODE -->
+
+<script src="https://pl30754906.effectivecpmnetwork.com/87/b9/ad/87b9ad2bc31bfd1dfb08ce6b5e2e81a3.js">
+</script>
 
 
 </body>
